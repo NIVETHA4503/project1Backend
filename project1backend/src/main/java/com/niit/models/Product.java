@@ -1,13 +1,18 @@
 package com.niit.models;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 
@@ -24,7 +29,11 @@ private String description;
 private int quantity;
 @Min(value=1,message="Price cannot be less than 1")
 private double price;
-
+@ManyToOne
+@JoinColumn(name="cid")
+private Category category;
+@Transient
+private  MultipartFile  image;
 public int getId() {
 	return id;
 }
@@ -55,7 +64,21 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
-
+public Category getCategory() {
+	return category;
+}
+public void setCategory(Category category) {
+	this.category = category;
+}
+public MultipartFile getImage() {
+	return image;
+	
+}
+public void setImage(MultipartFile image) {
+	this.image = image;
+}
 
 
 }
+
+

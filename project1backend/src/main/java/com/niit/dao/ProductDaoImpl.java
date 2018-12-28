@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.models.Category;
 import com.niit.models.Product;
 @Repository  
 @Transactional 
@@ -45,7 +47,11 @@ private SessionFactory sessionFactory;
 	session.saveOrUpdate(product);
 		
 	}
+	public List<Category> getAllCategories() {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Category");
+		List<Category> categories=query.list();
+		return categories;
 	
-	
-
+	}
 }
