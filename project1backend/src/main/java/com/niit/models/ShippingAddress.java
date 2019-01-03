@@ -4,34 +4,35 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class ShippingAddress {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int shippingId;
-	private String streetName;
-	private String apartmentNumber;
+	private String streetname;
+	private String apartmentnumber;
 	private String city;
 	private String state;
 	private String country;
-	private String zipCode;
+	private String zipcode;
 	public int getShippingId() {
 		return shippingId;
 	}
 	public void setShippingId(int shippingId) {
 		this.shippingId = shippingId;
 	}
-	public String getStreetName() {
-		return streetName;
+	public String getStreetname() {
+		return streetname;
 	}
-	public void setStreetName(String streetName) {
-		this.streetName = streetName;
+	public void setStreetname(String streetname) {
+		this.streetname = streetname;
 	}
-	public String getApartmentNumber() {
-		return apartmentNumber;
+	public String getApartmentnumber() {
+		return apartmentnumber;
 	}
-	public void setApartmentNumber(String apartmentNumber) {
-		this.apartmentNumber = apartmentNumber;
+	public void setApartmentnumber(String apartmentnumber) {
+		this.apartmentnumber = apartmentnumber;
 	}
 	public String getCity() {
 		return city;
@@ -51,12 +52,11 @@ public class ShippingAddress {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public String getZipCode() {
-		return zipCode;
+	public String getZipcode() {
+		return zipcode;
 	}
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
 	}
 	
-
 }
